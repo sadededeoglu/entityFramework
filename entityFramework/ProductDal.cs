@@ -1,4 +1,5 @@
-﻿using System;
+﻿using entityFramework.model;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -9,9 +10,9 @@ namespace entityFramework
 {
    public class ProductDal
     {
-        public List<products> GetAll()
+        public List<Product> GetAll()
         {
-            using (ETradeEntities1 context = new ETradeEntities1())
+            using (ETradeContext context = new ETradeContext())
             {
                 var u=context.products.ToList();
                 return u;
