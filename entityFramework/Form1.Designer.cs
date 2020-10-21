@@ -138,7 +138,6 @@
             this.dgwProducts.Name = "dgwProducts";
             this.dgwProducts.Size = new System.Drawing.Size(608, 165);
             this.dgwProducts.TabIndex = 8;
-//            this.dgwProducts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwProducts_CellContentClick);
             // 
             // gbupdate
             // 

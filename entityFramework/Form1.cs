@@ -34,7 +34,6 @@ namespace entityFramework
         {
             dgwProducts.DataSource = _productDal.GetAll();
         }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             _productDal.Add(new Product/*burda olusturup gönderiyorum*/
@@ -63,7 +62,6 @@ namespace entityFramework
             tbxunitpupdate.Text = dgwProducts.CurrentRow.Cells[2].Value.ToString();
             tbxStockAupdate.Text = dgwProducts.CurrentRow.Cells[3].Value.ToString();
         }
-
         private void btnRemove_Click(object sender, EventArgs e)
         {
             _productDal.Delete(new Product{ 
@@ -74,15 +72,14 @@ namespace entityFramework
         }
         private void SearchProducts(string key)
         {
-            var result = _productDal.GetAll().Where(p => p.Name.Contains(key)).ToList();
+            //var result = _productDal.GetAll().Where(p => p.Name.ToLower().Contains(key.ToLower())).ToList();
             /*gelen liste üstünde filtreleme*/
+            var result = _productDal.GetByName(key);
             dgwProducts.DataSource = result;
         }
         private void tbxsearch_TextChanged(object sender, EventArgs e)
         {
             SearchProducts(tbxsearch.Text);
         }
-
-        
     }
 }
